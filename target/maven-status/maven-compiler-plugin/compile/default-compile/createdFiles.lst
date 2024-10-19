@@ -1,4 +1,13 @@
-com\myctu\touristmanagementsystem\TouristManagementSystem.class
 ModernDashboardUI.class
+com\myctu\touristmanagementsystem\view\userView$5.class
+com\myctu\touristmanagementsystem\view\AdminView$1.class
+com\myctu\touristmanagementsystem\model\Tour.class
+com\myctu\touristmanagementsystem\view\AdminView.class
+com\myctu\touristmanagementsystem\view\userView$4.class
+com\myctu\touristmanagementsystem\TouristManagementSystem.class
+com\myctu\touristmanagementsystem\view\userView.class
 com\myctu\touristmanagementsystem\database\DatabaseUtils.class
+com\myctu\touristmanagementsystem\view\userView$2.class
 ModernDashboardUI$RoundedPanel.class
+com\myctu\touristmanagementsystem\view\userView$1.class
+com\myctu\touristmanagementsystem\view\userView$3.class
