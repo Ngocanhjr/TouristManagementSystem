@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "AdminInformationView",
+            "request": "launch",
+            "mainClass": "com.myctu.touristmanagementsystem.view.AdminInformationView",
+            "projectName": "TouristManagementSystem"
+        },
+        {
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/app.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node"
+        }
+    ]
+}
