@@ -1,2 +1,4 @@
 com\myctu\touristmanagementsystem\TouristManagementSystem.class
+ModernDashboardUI.class
 com\myctu\touristmanagementsystem\database\DatabaseUtils.class
+ModernDashboardUI$RoundedPanel.class

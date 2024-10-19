@@ -20,5 +20,8 @@ public class TouristManagementSystem {
         if(success){
             System.out.println("Done test db!");
         }
+        
+//       AdminView ad = new AdminView();
+//       ad.setVisible(true);
     }
 }
