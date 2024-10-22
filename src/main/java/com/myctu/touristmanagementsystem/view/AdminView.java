@@ -4,18 +4,63 @@
  */
 package com.myctu.touristmanagementsystem.view;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GradientPaint;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.BorderFactory;
+import javax.swing.JMenuBar;
+
 /**
  *
  * @author ASUS
  */
 public class AdminView extends javax.swing.JFrame {
 
+    DanhSachDatTour danhSachDatTourn = new DanhSachDatTour();
+    QuanLyTour quanLyTour = new QuanLyTour();
+
     /**
      * Creates new form AdminView
      */
     public AdminView() {
         initComponents();
+        initPanel();
+        customizeView();
         this.setLocationRelativeTo(this);
+    }
+
+    private void customizeView() {
+        menuAdmin = new JMenuBar() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+
+                // Vẽ nền gradient cho thanh menu
+                Graphics2D g2d = (Graphics2D) g;
+                int width = getWidth();
+                int height = getHeight();
+
+                // Gradient từ màu xám nhạt đến trắng
+                GradientPaint gp = new GradientPaint(0, 0, Color.LIGHT_GRAY, 0, height, Color.WHITE);
+                g2d.setPaint(gp);
+                g2d.fillRect(0, 0, width, height);
+            }
+        };
+
+        mnDsDatTour.setFont(new Font("Arial", Font.PLAIN, 14));
+        mnQuanLyTour.setFont(new Font("Arial", Font.PLAIN, 14));
+        menuAdmin.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        menuAdmin.repaint();
+    }
+
+    private void initPanel() {
+
+        pnMainAdmin.add(quanLyTour);
+        pnMainAdmin.add(danhSachDatTourn);
+        danhSachDatTourn.setVisible(false);
+        quanLyTour.setVisible(false);
     }
 
     /**
@@ -27,35 +72,48 @@ public class AdminView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        pnMainAdmin = new javax.swing.JLayeredPane();
+        menuAdmin = new javax.swing.JMenuBar();
+        mnHeThong = new javax.swing.JMenu();
+        mnQuanLyTour = new javax.swing.JMenuItem();
+        mnDsDatTour = new javax.swing.JMenuItem();
+        mnBaoCaoThongKe = new javax.swing.JMenuItem();
+        mnHoSo = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(0, 0));
 
-        jLabel1.setText("jLabel1");
+        pnMainAdmin.setPreferredSize(new java.awt.Dimension(600, 327));
+        pnMainAdmin.setLayout(new java.awt.CardLayout());
+        getContentPane().add(pnMainAdmin, java.awt.BorderLayout.CENTER);
 
-        jMenu1.setText("Hệ Thống");
-        jMenuBar1.add(jMenu1);
+        mnHeThong.setText("Hệ Thống");
 
-        jMenu2.setText("Hồ sơ");
+        mnQuanLyTour.setText("Quản lý tour");
+        mnQuanLyTour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnQuanLyTourActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mnQuanLyTour);
+
+        mnDsDatTour.setText("Danh sách đặt tour");
+        mnDsDatTour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnDsDatTourActionPerformed(evt);
+            }
+        });
+        mnHeThong.add(mnDsDatTour);
+
+        mnBaoCaoThongKe.setText("Báo cáo thống kê");
+        mnHeThong.add(mnBaoCaoThongKe);
+
+        menuAdmin.add(mnHeThong);
+
+        mnHoSo.setText("Hồ sơ");
 
         jMenuItem1.setText("Edit");
         jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
@@ -72,7 +130,7 @@ public class AdminView extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        mnHoSo.add(jMenuItem1);
 
         jMenuItem2.setText("logOut");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,25 +138,22 @@ public class AdminView extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        mnHoSo.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu2);
+        menuAdmin.add(mnHoSo);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(menuAdmin);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 661, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-        );
-
-        pack();
+        setBounds(0, 0, 612, 356);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        LoginView loginview = new LoginView();
+        loginview.setVisible(rootPaneCheckingEnabled);
+
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
@@ -110,14 +165,17 @@ public class AdminView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1AncestorMoved
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        LoginView loginview = new LoginView();
-        loginview.setVisible(rootPaneCheckingEnabled);
-        
-        
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void mnDsDatTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnDsDatTourActionPerformed
+
+        quanLyTour.setVisible(false);
+        danhSachDatTourn.setVisible(true);
+
+    }//GEN-LAST:event_mnDsDatTourActionPerformed
+
+    private void mnQuanLyTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnQuanLyTourActionPerformed
+        danhSachDatTourn.setVisible(false);
+        quanLyTour.setVisible(true);
+    }//GEN-LAST:event_mnQuanLyTourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,12 +213,15 @@ public class AdminView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuBar menuAdmin;
+    private javax.swing.JMenuItem mnBaoCaoThongKe;
+    private javax.swing.JMenuItem mnDsDatTour;
+    private javax.swing.JMenu mnHeThong;
+    private javax.swing.JMenu mnHoSo;
+    private javax.swing.JMenuItem mnQuanLyTour;
+    private javax.swing.JLayeredPane pnMainAdmin;
     // End of variables declaration//GEN-END:variables
 }
