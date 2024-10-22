@@ -1,9 +1,13 @@
-D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\LoginView.java
-D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\database\DatabaseUtils.java
 D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\model\Tour.java
-D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\TouristManagementSystem.java
 D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\AdminView.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\model\KhachDuLichDAO.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\model\ServiceDAO.java
 D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\UserView.java
 D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\AdminInformationView.java
 D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\ResgisterView.java
 D:\UngDung\TouristManagementSystem\src\main\java\ModernDashboardUI.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\view\LoginView.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\model\Service.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\model\KhachDuLich.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\database\DatabaseUtils.java
+D:\UngDung\TouristManagementSystem\src\main\java\com\myctu\touristmanagementsystem\TouristManagementSystem.java

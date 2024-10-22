@@ -43,11 +43,11 @@ public class ResgisterView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Đăng kí");
-        setBackground(new java.awt.Color(172, 172, 172));
+        setBackground(new java.awt.Color(102, 102, 0));
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
         setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        setForeground(new java.awt.Color(204, 255, 153));
         setIconImage(getIconImage());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
