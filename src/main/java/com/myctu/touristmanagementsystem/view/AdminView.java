@@ -1,4 +1,4 @@
-/*
+   /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -18,8 +18,9 @@ import javax.swing.JMenuBar;
  */
 public class AdminView extends javax.swing.JFrame {
 
-    DanhSachDatTour danhSachDatTourn = new DanhSachDatTour();
-    QuanLyTour quanLyTour = new QuanLyTour();
+    private DanhSachDatTour danhSachDatTourn = new DanhSachDatTour();
+    private QuanLyTour quanLyTour = new QuanLyTour();
+    private ThongKeBaoCao thongKeBaoCao = new ThongKeBaoCao();
 
     /**
      * Creates new form AdminView
@@ -59,8 +60,10 @@ public class AdminView extends javax.swing.JFrame {
 
         pnMainAdmin.add(quanLyTour);
         pnMainAdmin.add(danhSachDatTourn);
+        pnMainAdmin.add(thongKeBaoCao);
         danhSachDatTourn.setVisible(false);
         quanLyTour.setVisible(false);
+        thongKeBaoCao.setVisible(false);
     }
 
     /**
@@ -109,6 +112,11 @@ public class AdminView extends javax.swing.JFrame {
         mnHeThong.add(mnDsDatTour);
 
         mnBaoCaoThongKe.setText("Báo cáo thống kê");
+        mnBaoCaoThongKe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnBaoCaoThongKeActionPerformed(evt);
+            }
+        });
         mnHeThong.add(mnBaoCaoThongKe);
 
         menuAdmin.add(mnHeThong);
@@ -176,6 +184,13 @@ public class AdminView extends javax.swing.JFrame {
         danhSachDatTourn.setVisible(false);
         quanLyTour.setVisible(true);
     }//GEN-LAST:event_mnQuanLyTourActionPerformed
+
+    private void mnBaoCaoThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnBaoCaoThongKeActionPerformed
+        // TODO add your handling code here:
+        danhSachDatTourn.setVisible(false);
+        quanLyTour.setVisible(false);
+        thongKeBaoCao.setVisible(true);
+    }//GEN-LAST:event_mnBaoCaoThongKeActionPerformed
 
     /**
      * @param args the command line arguments
