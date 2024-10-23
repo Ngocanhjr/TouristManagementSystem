@@ -4,7 +4,7 @@
  */
 package com.myctu.touristmanagementsystem.controller;
 
-import com.myctu.touristmanagementsystem.model.ChuDichVuDAO;
+import com.myctu.touristmanagementsystem.dao.ChuDichVuDAO;
 
 /**
  *
@@ -12,6 +12,5 @@ import com.myctu.touristmanagementsystem.model.ChuDichVuDAO;
  */
 public class ChuDichVuController {
     private ChuDichVuDAO chuDichVuDAO;
-    
-    
+
 }

@@ -1,4 +1,5 @@
 com\myctu\touristmanagementsystem\view\UserView$4.class
+com\myctu\touristmanagementsystem\dao\DAOInterface.class
 com\myctu\touristmanagementsystem\view\UserView$1.class
 com\myctu\touristmanagementsystem\view\ResgisterView$3.class
 com\myctu\touristmanagementsystem\view\ResgisterView$9.class
@@ -12,8 +13,11 @@ com\myctu\touristmanagementsystem\view\ResgisterView$1.class
 com\myctu\touristmanagementsystem\view\UserView$9.class
 com\myctu\touristmanagementsystem\view\ResgisterView$8.class
 com\myctu\touristmanagementsystem\view\ResgisterView$4.class
+com\myctu\touristmanagementsystem\view\AdminInformationView$5.class
 com\myctu\touristmanagementsystem\view\UserView$6.class
 com\myctu\touristmanagementsystem\view\ResgisterView$7.class
+com\myctu\touristmanagementsystem\dao\ChuDichVuDAO.class
 com\myctu\touristmanagementsystem\view\UserView$8.class
 com\myctu\touristmanagementsystem\view\UserView$2.class
+com\myctu\touristmanagementsystem\dao\KhachDuLichDAO.class
 com\myctu\touristmanagementsystem\view\UserView$5.class

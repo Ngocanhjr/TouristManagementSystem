@@ -16,7 +16,7 @@ import java.util.logging.Logger;
  */
 public class DatabaseUtils {
 
-    private static final String url = "jdbc:sqlserver://localhost:1433;databaseName=TouristManagementSystem;user=sa;password=12345678;"
+    private static final String url = "jdbc:sqlserver://localhost:1433;databaseName=DBTOUR;user=sa;password=12345678;"
             + "encrypt=true;trustServerCertificate=true;";
 
     public static Connection getConnection() {
