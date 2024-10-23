@@ -33,7 +33,7 @@ public class KhachDuLichDAO implements DAOInterface<KhachDuLich>{
     }
 
     @Override
-    public List<KhachDuLich> sellectAll() {
+    public List<KhachDuLich> selectAll() {
         List<KhachDuLich> khachDuLichs = new ArrayList<>();
         
         return khachDuLichs;

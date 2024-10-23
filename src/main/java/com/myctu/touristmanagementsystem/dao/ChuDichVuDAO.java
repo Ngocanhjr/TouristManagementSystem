@@ -70,7 +70,7 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
             stm.setString(4, chuDichVu.getTenDangNhap());
             
             stm.executeUpdate();
-            System.out.println("update");
+//            System.out.println("update");
             stm.close();
         } catch (SQLException ex) {
             Logger.getLogger(ChuDichVuDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,15 +87,36 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
     }
 
     @Override
-    public boolean delete(ChuDichVu t) {
+    public boolean delete(ChuDichVu chuDichVu) {
+        Connection conn = DatabaseUtils.getConnection();
+        String sqlDelete = "delete from CHU_DICH_VU where TenDangNhap = ?";
+        
+        try {
+            PreparedStatement stm = conn.prepareStatement(sqlDelete);
+            stm.setString(1, chuDichVu.getTenDangNhap());
+            System.out.println("delete");
+            stm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(ChuDichVuDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ChuDichVuDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         return false;
 
     }
 
     @Override
-    public List<ChuDichVu> sellectAll() {
+    public List<ChuDichVu> selectAll() {
+        Connection conn = DatabaseUtils.getConnection();
+        String sqlSelect  
         List<ChuDichVu> chuDichVus = new ArrayList<>();
-
+        
+        
         return chuDichVus;
     }
 

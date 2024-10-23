@@ -17,6 +17,6 @@ public interface DAOInterface <T>{
     
     public boolean  delete(T t);
     
-    public List <T> sellectAll();
+    public List <T> selectAll();
       
 }
