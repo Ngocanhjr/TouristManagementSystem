@@ -8,6 +8,10 @@ package com.myctu.touristmanagementsystem.model;
  *
  * @author ASUS
  */
-public class Service {
+public class ChuDichVuDAO {
+
+    public ChuDichVuDAO() {
+    }
+    
     
 }

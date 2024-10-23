@@ -8,7 +8,7 @@ package com.myctu.touristmanagementsystem.model;
  *
  * @author ASUS
  */
-public class KhachDuLich {
+public class ChuDichVu {
 
     private String hoVaTen;
 
@@ -59,6 +59,4 @@ public class KhachDuLich {
     public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
-
-    
 }
