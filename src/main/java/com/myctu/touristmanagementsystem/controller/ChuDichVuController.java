@@ -5,6 +5,7 @@
 package com.myctu.touristmanagementsystem.controller;
 
 import com.myctu.touristmanagementsystem.dao.ChuDichVuDAO;
+import com.myctu.touristmanagementsystem.view.InfoAccountView;
 
 /**
  *
@@ -12,5 +13,8 @@ import com.myctu.touristmanagementsystem.dao.ChuDichVuDAO;
  */
 public class ChuDichVuController {
     private ChuDichVuDAO chuDichVuDAO;
-
+    private InfoAccountView adminInformationView;
+    
+    
+    
 }

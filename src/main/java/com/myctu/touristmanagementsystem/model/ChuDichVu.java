@@ -20,6 +20,17 @@ public class ChuDichVu {
 
     private String soDienThoai;
 
+    public ChuDichVu() {
+    }
+    
+    public ChuDichVu(String hoVaTen, String tenDangNhap, String matKhau, String email, String soDienThoai) {
+        this.hoVaTen = hoVaTen;
+        this.tenDangNhap = tenDangNhap;
+        this.matKhau = matKhau;
+        this.email = email;
+        this.soDienThoai = soDienThoai;
+    }
+
     public String getHoVaTen() {
         return hoVaTen;
     }

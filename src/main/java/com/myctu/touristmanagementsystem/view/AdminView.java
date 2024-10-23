@@ -83,8 +83,8 @@ public class AdminView extends javax.swing.JFrame {
         mnDsDatTour = new javax.swing.JMenuItem();
         mnBaoCaoThongKe = new javax.swing.JMenuItem();
         mnHoSo = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        mnEditAccount = new javax.swing.JMenuItem();
+        mnLogOut = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
@@ -123,30 +123,30 @@ public class AdminView extends javax.swing.JFrame {
 
         mnHoSo.setText("Hồ sơ");
 
-        jMenuItem1.setText("Edit");
-        jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        mnEditAccount.setText("Edit");
+        mnEditAccount.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jMenuItem1AncestorMoved(evt);
+                mnEditAccountAncestorMoved(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        mnEditAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                mnEditAccountActionPerformed(evt);
             }
         });
-        mnHoSo.add(jMenuItem1);
+        mnHoSo.add(mnEditAccount);
 
-        jMenuItem2.setText("logOut");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnLogOut.setText("logOut");
+        mnLogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnLogOutActionPerformed(evt);
             }
         });
-        mnHoSo.add(jMenuItem2);
+        mnHoSo.add(mnLogOut);
 
         menuAdmin.add(mnHoSo);
 
@@ -155,23 +155,23 @@ public class AdminView extends javax.swing.JFrame {
         setBounds(0, 0, 612, 356);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void mnLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnLogOutActionPerformed
         // TODO add your handling code here:
         dispose();
         LoginView loginview = new LoginView();
         loginview.setVisible(rootPaneCheckingEnabled);
 
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_mnLogOutActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void mnEditAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEditAccountActionPerformed
         // TODO add your handling code here:
-        AdminInformationView adminIF = new AdminInformationView();
+        InfoAccountView adminIF = new InfoAccountView();
         adminIF.setVisible(rootPaneCheckingEnabled);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_mnEditAccountActionPerformed
 
-    private void jMenuItem1AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem1AncestorMoved
+    private void mnEditAccountAncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_mnEditAccountAncestorMoved
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1AncestorMoved
+    }//GEN-LAST:event_mnEditAccountAncestorMoved
 
     private void mnDsDatTourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnDsDatTourActionPerformed
 
@@ -228,14 +228,14 @@ public class AdminView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenuBar menuAdmin;
     private javax.swing.JMenuItem mnBaoCaoThongKe;
     private javax.swing.JMenuItem mnDsDatTour;
+    private javax.swing.JMenuItem mnEditAccount;
     private javax.swing.JMenu mnHeThong;
     private javax.swing.JMenu mnHoSo;
+    private javax.swing.JMenuItem mnLogOut;
     private javax.swing.JMenuItem mnQuanLyTour;
     private javax.swing.JLayeredPane pnMainAdmin;
     // End of variables declaration//GEN-END:variables
