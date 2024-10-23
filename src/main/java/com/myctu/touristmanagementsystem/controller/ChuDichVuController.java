@@ -4,10 +4,14 @@
  */
 package com.myctu.touristmanagementsystem.controller;
 
+import com.myctu.touristmanagementsystem.model.ChuDichVuDAO;
+
 /**
  *
  * @author ASUS
  */
 public class ChuDichVuController {
+    private ChuDichVuDAO chuDichVuDAO;
+    
     
 }
