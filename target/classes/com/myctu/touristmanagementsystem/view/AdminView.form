@@ -33,6 +33,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="B&#xe1;o c&#xe1;o th&#x1ed1;ng k&#xea;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnBaoCaoThongKeActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
