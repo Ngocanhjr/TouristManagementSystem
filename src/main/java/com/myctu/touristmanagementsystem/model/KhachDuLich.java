@@ -20,6 +20,19 @@ public class KhachDuLich {
 
     private String soDienThoai;
 
+    public KhachDuLich() {
+    }
+
+    public KhachDuLich(String hoVaTen, String tenDangNhap, String matKhau, String email, String soDienThoai) {
+        this.hoVaTen = hoVaTen;
+        this.tenDangNhap = tenDangNhap;
+        this.matKhau = matKhau;
+        this.email = email;
+        this.soDienThoai = soDienThoai;
+    }
+    
+    
+
     public String getHoVaTen() {
         return hoVaTen;
     }

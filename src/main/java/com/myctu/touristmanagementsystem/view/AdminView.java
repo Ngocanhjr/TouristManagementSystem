@@ -165,7 +165,7 @@ public class AdminView extends javax.swing.JFrame {
 
     private void mnEditAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnEditAccountActionPerformed
         // TODO add your handling code here:
-        InfoAccountView adminIF = new InfoAccountView();
+        InfoAdminView adminIF = new InfoAdminView();
         adminIF.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_mnEditAccountActionPerformed
 

@@ -18,5 +18,7 @@ public interface DAOInterface <T>{
     public boolean  delete(T t);
     
     public List <T> selectAll();
+    
+    public T selectByTenDangNhap(T t);
       
 }

@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,7 +39,7 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
             stm.setString(3, chuDichVu.getMatKhau());
             stm.setString(4, chuDichVu.getEmail());
             stm.setString(5, chuDichVu.getSoDienThoai());
-            
+
             stm.executeUpdate();
 
 //            System.out.println("Insert done!");
@@ -96,11 +97,11 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
 
         try {
             PreparedStatement stm = conn.prepareStatement(sqlDelete);
-            
+
             stm.setString(1, chuDichVu.getTenDangNhap());
-            
+
             stm.executeUpdate();
-            
+
             System.out.println("delete");
             stm.close();
         } catch (SQLException ex) {
@@ -125,17 +126,17 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
         try {
             Statement stm = conn.createStatement();
             ResultSet rs = stm.executeQuery(sqlSelect);
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 String ten = rs.getString("TenCDV");
                 String tenDangNhap = rs.getString("TenDangNhap");
                 String matKhau = rs.getString("MatKhau");
                 String email = rs.getString("Email");
                 String sdt = rs.getString("SoDienThoai");
-                ChuDichVu cdv = new ChuDichVu(ten,tenDangNhap,matKhau,email,sdt);
-                chuDichVus.add(cdv);       
+                ChuDichVu cdv = new ChuDichVu(ten, tenDangNhap, matKhau, email, sdt);
+                chuDichVus.add(cdv);
             }
-        
+
             stm.close();
             rs.close();
         } catch (SQLException ex) {
@@ -143,6 +144,44 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
         }
 
         return chuDichVus;
+    }
+
+    @Override
+    public ChuDichVu selectByTenDangNhap(ChuDichVu chuDichVu) {
+        Connection connection = DatabaseUtils.getConnection();
+        String sql = "select * from CHU_DICH_VU where TenDangNhap = ?";
+        
+        ChuDichVu cdv = new ChuDichVu();
+        
+        try {
+            PreparedStatement stm = connection.prepareStatement(sql);
+            
+            stm.setString(1, chuDichVu.getTenDangNhap());
+            
+            ResultSet rs = stm.executeQuery();
+            while(rs.next()){
+                String ten = rs.getString("TenCDV");
+                String tenDangNhap = rs.getString("TenDangNhap");
+                String matKhau = rs.getString("MatKhau");
+                String email = rs.getString("Email");
+                String sdt = rs.getString("SoDienThoai");
+                cdv.setHoVaTen(ten);
+                cdv.setTenDangNhap(tenDangNhap);
+                cdv.setMatKhau(matKhau);
+                cdv.setEmail(email);
+                cdv.setSoDienThoai(sdt);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ChuDichVuDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ChuDichVuDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return cdv;
     }
 
 }

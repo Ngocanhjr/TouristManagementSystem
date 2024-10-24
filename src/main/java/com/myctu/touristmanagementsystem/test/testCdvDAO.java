@@ -34,13 +34,12 @@ public class testCdvDAO {
          cdv.setMatKhau("123456");
          cdv.setEmail("ale23@gmail.com");
          cdv.setSoDienThoai("0123456780");
-
+//         chudichvu.insert(cdv);
 //        List<ChuDichVu> chudichvus = chudichvu.selectAll();
-//        for (ChuDichVu chudichvu1 : chudichvus) {
-//            System.out.println("Chu dich vu: " + chudichvu1.getHoVaTen());
-//            System.out.println("Chu dich vu: " + chudichvu1.getTenDangNhap());
-//            System.out.println("Chu dich vu: " + chudichvu1.getMatKhau());
-//        }
+        ChuDichVu find = new ChuDichVu();
+        find.setTenDangNhap("nguyenvana");
+        find = chudichvu.selectByTenDangNhap(find);
+        System.out.println("Ten: " + find.getHoVaTen());
         
         chudichvu.delete(cdv);
         // for (ChuDichVu chudichvu1 : chudichvus) {
