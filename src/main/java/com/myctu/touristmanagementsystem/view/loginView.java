@@ -4,6 +4,12 @@
  */
 package com.myctu.touristmanagementsystem.view;
 
+import com.myctu.touristmanagementsystem.model.DangNhap;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author GIGABYTE
@@ -134,52 +140,39 @@ public class LoginView extends javax.swing.JFrame {
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
-
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
     private void btnDangKyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangKyActionPerformed
         // TODO add your handling code here:
-        dispose();
-        ResgisterView res = new ResgisterView();
-        res.setVisible(rootPaneCheckingEnabled);
+//        dispose();
+//        ResgisterView res = new ResgisterView();
+//        res.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btnDangKyActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new LoginView().setVisible(true);
-//            }
-//        });
-//    }
-
+    private boolean validateLoginData (String tenDangNhap, String matKhau){
+        if(tenDangNhap.isBlank() || matKhau.isBlank()){
+            JOptionPane.showMessageDialog(rootPane, "Không được bỏ trống tên đăng nhập hoặc mật khấu!");
+            return false;
+        }
+        return true;
+    }
+    
+//DOC DU LIEU TU TEXTFILD
+    
+    public DangNhap getDangNhap(){
+        String tenDangNhap = tfTenDangNhap.getText();
+        String matKhau = pfMatKhau.getSelectedText();
+        System.out.println(matKhau);
+        if(!validateLoginData(tenDangNhap, matKhau)){
+            return null;
+        }
+        DangNhap currentUser = new DangNhap(tenDangNhap, matKhau);
+        return currentUser;
+    } 
+    
+    public void addDangNhapListener(ActionListener listener){
+        btnDangNhap.addActionListener(listener);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnDangNhap;
