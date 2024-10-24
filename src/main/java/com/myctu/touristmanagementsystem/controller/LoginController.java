@@ -9,6 +9,7 @@ import com.myctu.touristmanagementsystem.dao.KhachDuLichDAO;
 import com.myctu.touristmanagementsystem.model.DangNhap;
 import com.myctu.touristmanagementsystem.view.AdminView;
 import com.myctu.touristmanagementsystem.view.LoginView;
+import com.myctu.touristmanagementsystem.view.ResgisterView;
 import com.myctu.touristmanagementsystem.view.UserView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,6 +21,8 @@ import java.awt.event.ActionListener;
 public class LoginController {
 
     private LoginView loginView;
+    
+    private ResgisterView resgisterView;
 
     private AdminView adminView;
 
@@ -31,7 +34,8 @@ public class LoginController {
 
     public LoginController(LoginView loginView) {
         this.loginView = loginView;
-        loginView.addDangNhapListener(new dangNhaplistener());
+        loginView.addDangNhapListener(new dangNhapListener());
+        loginView.addDangKyListener(new dangKyListener());
     }
 
     
@@ -40,7 +44,7 @@ public class LoginController {
     }
 
 //    public boolean 
-    class dangNhaplistener implements ActionListener {
+    private class dangNhapListener implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -51,4 +55,14 @@ public class LoginController {
         }
 
     }
+    
+   private class dangKyListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            resgisterView = new ResgisterView();
+            resgisterView.setVisible(true);
+        }
+       
+   }
 }

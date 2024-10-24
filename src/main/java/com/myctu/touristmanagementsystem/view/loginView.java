@@ -173,6 +173,11 @@ public class LoginView extends javax.swing.JFrame {
     public void addDangNhapListener(ActionListener listener){
         btnDangNhap.addActionListener(listener);
     }
+    
+    public void addDangKyListener(ActionListener listener){
+        btnDangKy.addActionListener(listener);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnDangNhap;
