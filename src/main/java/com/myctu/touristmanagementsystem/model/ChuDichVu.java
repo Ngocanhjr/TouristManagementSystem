@@ -19,6 +19,8 @@ public class ChuDichVu {
     private String email;
 
     private String soDienThoai;
+    
+    private String vaiTro;
 
     public ChuDichVu() {
     }
@@ -70,4 +72,14 @@ public class ChuDichVu {
     public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
+
+    public String getVaiTro() {
+        return vaiTro;
+    }
+
+    public void setVaiTro(String vaiTro) {
+        this.vaiTro = vaiTro;
+    }
+    
+    
 }

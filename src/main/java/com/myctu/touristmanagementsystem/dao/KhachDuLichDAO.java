@@ -25,7 +25,7 @@ public class KhachDuLichDAO implements DAOInterface<KhachDuLich> {
     @Override
     public boolean insert(KhachDuLich khachDuLich) {
         Connection conn = DatabaseUtils.getConnection();
-        String sqlInsert = "insert into KHACH_DU_LICH (TenKDL, TenDangNhap, MatKhau, Email, SoDienThoai) values (?,?,?,?,?)";
+        String sqlInsert = "insert into KHACH_DU_LICH (TenKDL, TenDangNhap, MatKhau, Email, SoDienThoai,VaiTro) values (?,?,?,?,?,?)";
 
         try {
             PreparedStatement stm = conn.prepareStatement(sqlInsert);
@@ -35,7 +35,7 @@ public class KhachDuLichDAO implements DAOInterface<KhachDuLich> {
             stm.setString(3, khachDuLich.getMatKhau());
             stm.setString(4, khachDuLich.getEmail());
             stm.setString(5, khachDuLich.getSoDienThoai());
-
+            stm.setString(6, khachDuLich.getVaiTro());
             stm.executeUpdate();
 
             stm.close();
@@ -179,4 +179,27 @@ public class KhachDuLichDAO implements DAOInterface<KhachDuLich> {
         return kdl;
     }
 
+    public String getVaiTro(String tenDangNhap) {
+        Connection conn = DatabaseUtils.getConnection();
+        String selectRole = "select VaiTro from KHACH_DU_LICH where TenDangNhap = '" + tenDangNhap + "'";
+        String role = null;
+        try {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(selectRole);
+            while (rs.next()) {
+               role = rs.getString("VaiTro");
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(KhachDuLichDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(KhachDuLichDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+//        System.out.println(role);
+        return role;
+    }
 }

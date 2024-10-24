@@ -12,6 +12,8 @@ public class DangNhap {
     private String tenDangNhap;
     
     private String matKhau;
+    
+    private String role;
 
     public DangNhap() {
     }
@@ -21,6 +23,15 @@ public class DangNhap {
         this.matKhau = matKhau;
     }
 
+    
+    public DangNhap(String tenDangNhap, String matKhau, String role) {
+        this.tenDangNhap = tenDangNhap;
+        this.matKhau = matKhau;
+        this.role = role;
+    }
+
+   
+    
     public String getTenDangNhap() {
         return tenDangNhap;
     }
@@ -35,6 +46,14 @@ public class DangNhap {
 
     public void setMatKhau(String matKhau) {
         this.matKhau = matKhau;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
     
     

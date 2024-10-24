@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +28,7 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
     @Override
     public boolean insert(ChuDichVu chuDichVu) {
         Connection conn = DatabaseUtils.getConnection();
-        String sqlInsert = "Insert into CHU_DICH_VU (TenCDV, TenDangNhap, MatKhau, Email, SoDienThoai) values(?,?,?,?,?)";
+        String sqlInsert = "Insert into CHU_DICH_VU (TenCDV, TenDangNhap, MatKhau, Email, SoDienThoai, VaiTro) values(?,?,?,?,?,?)";
 
         try {
             PreparedStatement stm = conn.prepareStatement(sqlInsert);
@@ -39,6 +38,7 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
             stm.setString(3, chuDichVu.getMatKhau());
             stm.setString(4, chuDichVu.getEmail());
             stm.setString(5, chuDichVu.getSoDienThoai());
+            stm.setString(6, chuDichVu.getVaiTro());
 
             stm.executeUpdate();
 
@@ -184,4 +184,27 @@ public class ChuDichVuDAO implements DAOInterface<ChuDichVu> {
         return cdv;
     }
 
+     public String getVaiTro(String tenDangNhap) {
+        Connection conn = DatabaseUtils.getConnection();
+        String selectRole = "select VaiTro from CHU_DICH_VU where TenDangNhap = '" + tenDangNhap + "'";
+        String role = null;
+        try {
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(selectRole);
+            while (rs.next()) {
+               role = rs.getString("VaiTro");
+            }
+            stm.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(KhachDuLichDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally{
+            try {
+                conn.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(KhachDuLichDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+//        System.out.println(role);
+        return role;
+     }
 }

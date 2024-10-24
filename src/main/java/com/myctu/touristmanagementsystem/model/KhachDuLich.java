@@ -20,6 +20,8 @@ public class KhachDuLich {
 
     private String soDienThoai;
 
+    private String vaiTro;
+
     public KhachDuLich() {
     }
 
@@ -30,8 +32,6 @@ public class KhachDuLich {
         this.email = email;
         this.soDienThoai = soDienThoai;
     }
-    
-    
 
     public String getHoVaTen() {
         return hoVaTen;
@@ -73,5 +73,12 @@ public class KhachDuLich {
         this.soDienThoai = soDienThoai;
     }
 
-    
+    public String getVaiTro() {
+        return vaiTro;
+    }
+
+    public void setVaiTro(String vaiTro) {
+        this.vaiTro = vaiTro;
+    }
+
 }

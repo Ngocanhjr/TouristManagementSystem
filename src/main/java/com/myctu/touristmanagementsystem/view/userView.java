@@ -17,6 +17,7 @@ public class UserView extends javax.swing.JFrame {
      */
     public UserView() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

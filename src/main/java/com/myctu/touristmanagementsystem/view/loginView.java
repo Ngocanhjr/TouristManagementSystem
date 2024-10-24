@@ -8,8 +8,6 @@ import com.myctu.touristmanagementsystem.model.DangNhap;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-
-
 /**
  *
  * @author GIGABYTE
@@ -21,8 +19,8 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
-        this.setLocationRelativeTo(this);
-        this.setVisible(rootPaneCheckingEnabled);
+        this.setLocationRelativeTo(null);
+//        this.setVisible(rootPaneCheckingEnabled);
     }
 
     /**
@@ -149,35 +147,36 @@ public class LoginView extends javax.swing.JFrame {
 //        res.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_btnDangKyActionPerformed
 
-    private boolean validateLoginData (String tenDangNhap, String matKhau){
-        if(tenDangNhap.isBlank() || matKhau.isBlank()){
+    private boolean validateLoginData(String tenDangNhap, String matKhau) {
+        if (tenDangNhap == null || matKhau == null || tenDangNhap.isBlank() || matKhau.isBlank()) {
             JOptionPane.showMessageDialog(rootPane, "Không được bỏ trống tên đăng nhập hoặc mật khấu!");
             return false;
         }
         return true;
     }
-    
+
 //DOC DU LIEU TU TEXTFILD
-    
-    public DangNhap getDangNhap(){
+    public DangNhap getDangNhap() {
         String tenDangNhap = tfTenDangNhap.getText();
-        String matKhau = pfMatKhau.getSelectedText();
+        String matKhau = new String(pfMatKhau.getPassword());
         System.out.println(matKhau);
-        if(!validateLoginData(tenDangNhap, matKhau)){
+        if (!validateLoginData(tenDangNhap, matKhau)) {
             return null;
         }
         DangNhap currentUser = new DangNhap(tenDangNhap, matKhau);
+
+        System.out.println("LoginView: " + matKhau);
         return currentUser;
-    } 
-    
-    public void addDangNhapListener(ActionListener listener){
+    }
+
+    public void addDangNhapListener(ActionListener listener) {
         btnDangNhap.addActionListener(listener);
     }
-    
-    public void addDangKyListener(ActionListener listener){
+
+    public void addDangKyListener(ActionListener listener) {
         btnDangKy.addActionListener(listener);
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangKy;
     private javax.swing.JButton btnDangNhap;
